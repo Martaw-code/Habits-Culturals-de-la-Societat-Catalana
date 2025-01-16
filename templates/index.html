@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàbits Culturals a la Societat Catalana</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Explorant els Hàbits Culturals de la Societat Catalana</h1>
+        <img src="/static/images/senyera.png" alt="Senyera catalana" style="width: 150px;">
+    </header>
+    <main>
+        <section id="introduccio" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Introducció</h2>
+            <p>La cultura és molt més que una expressió artística o patrimonial; és el teixit que connecta les persones amb els seus valors, tradicions i aspiracions. A Catalunya, la cultura juga un paper fonamental com a motor de cohesió social, desenvolupament econòmic i innovació, tot projectant un futur inclusiu i sostenible. En un context de transformació digital i globalització, comprendre els hàbits culturals dels catalans és essencial per identificar oportunitats i reptes en l'accés a la cultura.</p>
+            
+            <p>Per a aquest estudi, hem utilitzat <a href="https://analisi.transparenciacatalunya.cat/Cultura-oci/Enquesta-de-participaci-cultural-de-Catalunya-2023/tdfn-n2aw/about_data" style="color: red; font-weight: bold;">l'Enquesta de Participació Cultural de Catalunya 2023</a>, que recull dades de <b>4.124 participants</b>. Aquesta enquesta proporciona una visió representativa de la població catalana, amb dades detallades sobre edat, sexe, ubicació geogràfica, ingressos i preferències lingüístiques. A través d’aquesta base de dades, podem analitzar com es distribueixen i condicionen els hàbits culturals, incloent-hi la participació en activitats com les exposicions, l’assistència al cinema o als espectacles escènics, i el consum de mitjans com la ràdio i els diaris.</p>
+            
+            <p>Un dels elements clau d’aquest projecte és la creació d’un <b>Índex de Cultura</b>, que sintetitza la implicació cultural dels participants. Aquest índex classifica els enquestats com <b><span style="color: red;">culturalment actius</span></b> si han participat en almenys tres de les activitats culturals analitzades, com escoltar la ràdio, llegir diaris, assistir al cinema, visitar exposicions o presenciar espectacles escènics. Aquesta eina ens permet explorar les diferències en la participació cultural segons diversos factors socioeconòmics, oferint una visió global i segmentada de la realitat cultural catalana.</p>
+            
+            <p>Amb aquest projecte, no només analitzem els patrons de participació cultural, sinó que també ens esforcem per fer aquests resultats comprensibles i accessibles mitjançant visualitzacions interactives creades amb <b>Plotly</b>. Aquestes visualitzacions permeten explorar dades complexes de manera intuïtiva, oferint insights clau per a públics <b>generalistes o bé especialitzats</b>. A més, esperem que aquestes anàlisis serveixin com a base per inspirar noves polítiques culturals i iniciatives que promoguin l’accessibilitat i la inclusió cultural a Catalunya.</p>
+        </section>
+        <section id="objectiu" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Objectius de la Pràctica</h2>
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #333; font-size: 1.4em;">Elecció adequada d'eines i tècniques</h3>
+                <p>
+                    Per desenvolupar aquest projecte, he fet servir eines específiques per a la creació de visualitzacions efectives i interactives, alineades amb les característiques del conjunt de dades i els objectius del projecte. Aquestes eines inclouen:
+                </p>
+                <ul>
+                    <li><b>Python:</b> Com a llenguatge principal per processar dades i crear les visualitzacions.</li>
+                    <li><b>Flask:</b> Per organitzar el backend i crear una aplicació web interactiva.</li>
+                    <li><b>Plotly:</b> Per generar visualitzacions avançades i interactives que permeten explorar les dades de forma dinàmica.</li>
+                    <li><b>Git i GitHub:</b> Per gestionar el codi i publicar el projecte a través de GitHub Pages, assegurant-ne l’accessibilitat pública.</li>
+                </ul>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #333; font-size: 1.4em;">Creació d'un projecte professional</h3>
+                <p>
+                    Aquest projecte s’ha dissenyat amb l’objectiu de combinar estructura, disseny i contingut de qualitat professional, orientat tant a públics especialitzats com no especialitzats. He seguit els principis teòrics de la visualització de dades, prioritzant la claredat i l’accessibilitat.
+                </p>
+                <p>
+                    La integració de <b>Flask</b> i <b>Plotly</b> ha permès generar un projecte modular i ben estructurat. Les visualitzacions desenvolupades aborden preguntes clau, com ara:
+                </p>
+                <ul>
+                    <li>Diferències en la participació cultural segons edat, sexe i regió.</li>
+                    <li>Impacte dels ingressos en els hàbits culturals.</li>
+                    <li>Relació entre les preferències lingüístiques i les activitats culturals.</li>
+                    <li>Anàlisi i plantejament de l'Índex Cultural.</li>
+                </ul>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #333; font-size: 1.4em;">Respostes a preguntes clau</h3>
+                <p>
+                    Un dels objectius principals ha estat formular i respondre preguntes relacionades amb les dades, utilitzant visualitzacions per facilitar l'exploració i la comprensió. Algunes de les preguntes abordades inclouen:
+                </p>
+                <ul>
+                    <li><b>Com influeix l’edat i el sexe en els hàbits culturals?</b>
+                    <li><b>Quina és la relació entre ingressos i accés cultural?</b>
+                    <li><b>Com condicionen les preferències lingüístiques els hàbits culturals?</b>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color: #333; font-size: 1.4em;">Disseny interactiu i comunicatiu</h3>
+                <p>
+                    El projecte s’ha centrat en incorporar elements interactius per millorar l’experiència de l’usuari i afavorir una comunicació efectiva dels resultats. Les característiques clau són:
+                </p>
+                <ul>
+                    <li>Gràfics <b>Sunburst</b> , <b>Parallel categories</b>, <b>Sankey </b>, <b>Polar </b>, <b>Radar </b> per explorar relacions multidimensionals.</li>
+                    <li>Gràfics de barres i sectors per mostrar patrons específics de participació cultural.</li>
+                    <li><b>Interactivitat!</b> Els gràfics permeten filtrar, ampliar i interpretar les dades directament al navegador, millorant l’exploració i la comprensió.</li>
+                </ul>
+            </div>            
+        </section>
+        <section id="insights" style="background-color: #ffffff; padding: 20px;">
+            <h2>Primeres Observacions</h2>
+            <p>
+                <b>L'enquesta de Participació Cultural de Catalunya 2023</b> compta amb un total de 
+                <b><span style="color: red;">4.124 participants</span></b>, representant una mostra significativa i estratificada de la població catalana. Aquesta mida d'enquesta garanteix la possibilitat de realitzar una anàlisi robusta i detallada, abordant les variacions en els hàbits culturals segons factors com l'edat, el gènere, la regió i altres variables clau.
+            </p>
+            <p>
+                En primer lloc, analitzem les característiques principals dels enquestats en termes d’edat, sexe, ubicació geogràfica i preferència lingüística, que constitueixen les bases per a l'anàlisi posterior. A continuació, presentem les dades recollides:
+            </p>
+            
+            <h3>Llengua</h3>
+            <p>
+                La preferència lingüística en activitats culturals reflecteix la diversitat i la riquesa lingüística de Catalunya. Els enquestats van declarar les seves preferències inicials:
+            </p>
+            {{ plot_llengua|safe }}
+            <p>
+                Aquesta gràfica mostra les preferències lingüístiques dels participants en activitats culturals a Catalunya. Es poden observar tres opcions: <b>Català, Castellà i Cap llengua especificada.</b>
+            </p>
+            <p>
+                - <b><span style="color: red;">Català</span></b> és la llengua més preferida, amb un total de <b><span style="color: red;">2.305 respostes</span></b>, la qual cosa indica una forta preferència per aquesta llengua en contextos culturals.<br>
+                - <b><span style="color: red;">Castellà</span></b> ocupa el segon lloc amb <b><span style="color: red;">1.814 respostes</span></b>, demostrant també una presència significativa però inferior al català.<br>
+                - Només <b><span style="color: red;">5 persones</span></b> no han especificat una llengua preferida, fet que mostra un interès alt en respondre aquesta pregunta.
+            </p>
+            <p>
+                La gràfica reflecteix la diversitat lingüística de Catalunya, amb una preferència majoritària pel català però amb una contribució significativa del castellà.
+            </p>
+            
+            <h3>Edat</h3>
+            <p>
+                Els hàbits culturals varien significativament segons l'edat. La distribució d'edat dels participants és la següent:
+            </p>
+            {{ plot_edat|safe }}
+            <p>
+                Aquesta gràfica representa la distribució dels participants segons grups d'edat, destacant com possiblement els hàbits culturals varien segons la franja d'edat.
+            </p>
+            <p>
+                - El grup d'edat més representat és el de <b><span style="color: red;">35-54 anys</span></b>, amb al voltant dels <b><span style="color: red;">900 participants</span></b>.<br>
+                - Els grups <b><span style="color: red;">>=55 anys</span></b> i <b><span style="color: red;">25-34 anys</span></b> tenen una participació similar, lleugerament inferior al grup principal.<br>
+                - Els grups més joves, com <b><span style="color: red;">14-19 anys</span></b> i <b><span style="color: red;">20-24 anys</span></b>, tenen menys representació, però encara mantenen un nombre significatiu.
+            </p>
+            <p>
+                La participació és més alta en persones adultes, especialment en la franja de <b><span style="color: red;">35-54 anys</span></b>, però els joves també hi participen, tot i que en menor mesura.
+            </p>
+            
+            <h3>Gènere</h3>
+            <p>
+                La distribució per sexe també ens pot permetre observar com les tendències culturals poden diferir entre homes i dones. Aquesta és la distribució dels enquestats segons el gènere:
+            </p>
+            {{ plot_genere|safe }}
+            <p>
+                Aquesta gràfica circular mostra la distribució dels participants segons el gènere </b>(dones i homes)</b>.
+            </p>
+            <p>
+                - Les <b><span style="color: red;">dones</span></b> representen el <b><span style="color: red;">50,7%</span></b> dels participants.<br>
+                - Els <b><span style="color: red;">homes</span></b> representen el <b><span style="color: red;">49,3%</span></b>.<br>
+                - La diferència entre ambdós grups és molt petita, indicant una distribució pràcticament equilibrada entre gèneres.
+            </p>
+            <p>
+                <b>Les dades reflecteixen una bona representació tant de dones com d'homes, la qual cosa permet extreure conclusions culturals sense un biaix significatiu de gènere.</b>
+            </p>
+            
+            <h3>Regió</h3>
+            <p>
+                La ubicació geogràfica dels participants és un factor determinant per entendre l'accés a la cultura. A continuació es mostra com es distribueixen per regions:
+            </p>
+            {{ plot_regio|safe }}
+            <p>
+                Aquesta gràfica de barres il·lustra la distribució dels participants segons les diferents regions geogràfiques de Catalunya.
+            </p>
+            <p>
+                - La <b><span style="color: red;">regió metropolitana</span></b> té la participació més alta amb més de <b><span style="color: red;">2.500 participants</span></b>
+                - Les regions com <b><span style="color: red;">Comarques Gironines</span></b>, <b><span style="color: red;">Camp de Tarragona</span></b> i <b><span style="color: red;">Penedès</span></b> tenen una participació notable, però molt inferior en comparació amb l'àrea metropolitana.<br>
+                - Les zones menys representades són <b><span style="color: red;">Ponent</span></b>, <b><span style="color: red;">Terres de l'Ebre</span></b> i <b><span style="color: red;">Alt Pirineu i Aran</span></b>, amb una participació mínima.
+            </p>
+            <p>
+                <b>Com veiem, la participació és clarament dominada per l'àrea metropolitana.
+            </p>            
+        <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Diaris</h2>
+            <p>
+                La lectura de diaris continua sent una de les activitats culturals més rellevants, tot i l'auge dels formats digitals. En aquest apartat analitzem quants participants van llegir diaris el dia anterior a l'enquesta, quins formats van utilitzar i quines llengües prefereixen per consumir aquest tipus de contingut.
+            </p>
+            
+            <h3>Diaris</h3>
+            <p>
+                El gràfic següent mostra el percentatge de participants que van declarar haver llegit o fullejat diaris el dia anterior a l'enquesta:
+                <b><span style="color: red;"> IMPORTANT: feu ús de gràfics interactius que permeten explorar els valors amb precisió! Només cal situar-se sobre els gràfics!:</span></b>
+            </p>
+            {{ plot_diari|safe }}
+            <p>
+                Com es pot observar, una part significativa dels enquestats no consumeix diaris regularment. Els resultats mostren que el <b><span style="color: red;">58,9%</span></b> dels participants va llegir diaris, mentre que el <b><span style="color: red;">41,1%</span></b> no ho va fer. Els lectors tendeixen a preferir formats digitals, tal com es detalla més endavant.
+            </p>
+            
+            <h3>Formats de Lectura</h3>
+            <p>
+                Entre els participants que van llegir diaris, es van recollir dades sobre els formats utilitzats. A continuació, es detalla la distribució per format (paper, pàgines web digitals, aplicacions mòbils):
+            </p>
+            {{ plot_diari_d2|safe }}
+            <p>
+                Els resultats mostren un predomini clar dels formats digitals, amb <b><span style="color: red;">990</span></b> persones que utilitzen pàgines web digitals i <b><span style="color: red;">851</span></b> que prefereixen aplicacions mòbils. El format físic (paper) és utilitzat per <b><span style="color: red;">397</span></b> participants, destacant com el consum físic està més limitat, sobretot entre els grups més joves.
+            </p>
+            
+            <h3>Llengües de Lectura</h3>
+            <p>
+                Pel que fa a la llengua en què els participants van llegir o fullejar diaris, els resultats reflecteixen la diversitat lingüística de Catalunya:
+            </p>
+            {{ plot_diari_d3|safe }}
+            <p>
+                El català és la llengua més utilitzada, amb <b><span style="color: red;">1.019</span></b> respostes, seguida del castellà amb <b><span style="color: red;">1.179</span></b>. Altres idiomes tenen una presència menor (<b><span style="color: red;">182</span></b>). Només <b><span style="color: red;">6</span></b> persones no van especificar cap preferència lingüística.
+            </p>
+            
+            <h3>Edat vs Lectura de Diaris</h3>
+            <p>
+                La distribució de la lectura de diaris per grups d’edat mostra patrons interessants. El gràfic de radar següent (interactiu) il·lustra com varia la proporció de lectors segons l’edat:
+            </p>
+            {{ plot_edat_vs_diars_radar|safe }}
+            <p>
+                Els grups d’edat més grans (<b><span style="color: red;">>=55 anys</span></b>) són més propensos a consumir diaris físics, mentre que les generacions més joves (<b><span style="color: red;">14-24 anys</span></b>) prefereixen formats digitals. Aquesta tendència reflecteix la transició cap a mitjans més accessibles tecnològicament, amb un ús majoritari de pàgines web i aplicacions mòbils entre els joves.
+            </p>            
+        <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Ràdio</h2>
+            <p>
+                La ràdio continua sent un dels mitjans de comunicació més rellevants, malgrat l'evolució dels formats digitals i l'augment del consum de podcasts. En aquesta secció analitzem quants participants van escoltar la ràdio el dia anterior a l’enquesta, els formats utilitzats i les llengües preferides pels oients.
+            </p>
+            
+            <h3>Consum General de Ràdio</h3>
+            <p>
+                El gràfic següent mostra la proporció de participants que van escoltar la ràdio el dia anterior (gràfic interactiu per explorar els percentatges):
+            </p>
+            {{ plot_edat_vs_radio_pie|safe }}
+            <p>
+                Els resultats indiquen que el <b><span style="color: red;">60%</span></b> dels participants van escoltar la ràdio, mentre que el <b><span style="color: red;">40%</span></b> no ho van fer. Aquest fet destaca la combinació de formats tradicionals i digitals, subratllant la rellevància continuada d’aquest mitjà.
+            </p>
+            
+            <h3>Formats d’Escolta</h3>
+            <p>
+                D'entre els participants que van escoltar la ràdio, es van registrar els formats utilitzats, incloent ràdio convencional, escolta per Internet, dispositius mòbils i podcasts:
+            </p>
+            {{ plot_r2_polar|safe }}
+            <p>
+                Els resultats mostren que la <b><span style="color: red;">ràdio convencional</span></b> és el format dominant, amb un ús significatiu entre les generacions més grans. Els formats digitals, com els <b><span style="color: red;">podcasts</span></b> i l'escolta a través de mòbils, són preferits per les generacions més joves. Aquesta evolució reflecteix l'adaptació tecnològica del consum radiofònic.
+            </p>
+            
+            <h3>Llengües d’Escolta</h3>
+            <p>
+                La distribució de les llengües utilitzades per escoltar la ràdio reflecteix les preferències lingüístiques dels oients:
+            </p>
+            {{ plot_r3_funnel|safe }}
+            <p>
+                El català és la llengua predominant, amb <b><span style="color: red;">1.721</span></b> respostes, seguida del castellà amb <b><span style="color: red;">1.422</span></b>. Altres llengües tenen una presència limitada (<b><span style="color: red;">101</span></b> respostes), però són més habituals en programes digitals o podcasts. Només <b><span style="color: red;">18</span></b> participants no van especificar cap preferència lingüística.
+            </p>
+            
+            <h3>Edat vs Escolta de Ràdio</h3>
+            <p>
+                La relació entre l’edat dels participants i el consum de ràdio es mostra al gràfic següent, que explora com els diferents grups d'edat accedeixen al contingut radiofònic:
+            </p>
+            {{ plot_parallel_radio|safe }}
+            <p>
+                Els oients més grans (<b><span style="color: red;">>=55 anys</span></b>) es decanten per formats tradicionals com la ràdio convencional. Els joves (<b><span style="color: red;">14-24 anys</span></b>) prefereixen formats més accessibles tecnològicament, com Internet i dispositius mòbils. Aquesta tendència evidencia com cada generació adapta el seu consum de ràdio a les seves preferències i mitjans disponibles.
+            </p>            
+        <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Cinema</h2>
+            <p>
+                El cinema continua sent una de les activitats culturals més populars, amb una distribució d'hàbits i preferències que varien segons l'edat, la situació laboral i altres factors. En aquesta secció explorem dades sobre qui assisteix al cinema, les versions de les pel·lícules preferides i les seves relacions amb variables clau.
+            </p>
+            
+            <h3>Edat i assistència al cinema</h3>
+            <p>
+                El gràfic següent mostra quants participants han anat al cinema recentment:
+            </p>
+            {{ plot_cinema_cn1|safe }}
+            <p>
+                Els resultats indiquen que un <b><span style="color: red;">major percentatge</span></b> dels participants va assistir al cinema, mentre que una part també declara que no ho ha fet recentment. Aquest comportament varia significativament segons l'edat.
+            </p>
+            
+            <h3>Versions de l'última pel·lícula vista</h3>
+            <p>
+                El següent gràfic analitza quina versió de pel·lícula prefereixen els espectadors (doblada, original subtitulada, etc.):
+            </p>
+            {{ plot_cinema_cn1b|safe }}
+            <p>
+                La versió <b><span style="color: red;">doblada</span></b> és la més popular, amb una àmplia preferència entre els espectadors. Les versions subtitulades o en versió original tenen menor popularitat, però encara són rellevants per a certs grups d'edat i perfils culturals.
+            </p>
+            
+            <h3>Llengües de l'última pel·lícula vista</h3>
+            <p>
+                El següent gràfic explora la distribució de les llengües en què s'han vist les pel·lícules (podem fer-hi clic sobre el quadrats, i per tirar enndarrera prement a qualsevol lloc de la barra negre):
+            </p>
+            {{ plot_cinema_cn2|safe }}
+            <p>
+                El <b><span style="color: red;">castellà</span></b> és la llengua predominant, amb un ús molt més elevat que altres idiomes. Tot i així, llengües com el català i l'anglès també tenen presència significativa entre els espectadors.
+            </p>
+            
+            <h3>Situació laboral vs assistència al cinema</h3>
+            <p>
+                El gràfic següent analitza com la situació laboral dels participants afecta l'assistència al cinema:
+            </p>
+            {{ plot_situacio_laboral_vs_cinema_area|safe }}
+            <p>
+                Els resultats mostren que les persones que <b><span style="color: red;">treballen</span></b> són els qui més freqüenten el cinema, seguides dels estudiants. Els participants en situació d'atur o jubilats presenten taxes d'assistència significativament més baixes.
+            </p>
+            
+            <h3>Lloc de naixement vs assistència al cinema</h3>
+            <p>
+                Aquest gràfic explora la relació entre el lloc de naixement i la freqüència d'assistència al cinema:
+            </p>
+            {{ plot_lloc_naixement_vs_cinema_area|safe }}
+            <p>
+                Els participants nascuts a <b><span style="color: red;">Catalunya</span></b> lideren l'assistència al cinema, seguits de la resta de l'Estat i altres països. Això reflecteix una relació directa entre la proximitat cultural i l'hàbit de consumir cinema local.
+            </p>            
+        <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Ingressos</h2>
+            <p>
+                Els ingressos familiars són un factor determinant en els hàbits culturals. Aquesta secció explora com la distribució dels ingressos mensuals nets de les llars influeix en la participació cultural, reflectint possibles barreres econòmiques i diferències en el consum cultural.
+            </p>
+
+            <h3>Flux d’ingressos</h3>
+            <p>
+                El gràfic següent mostra la distribució dels ingressos mensuals nets dels participants, agrupats segons el tipus de llar:
+            </p>
+            {{ plot_sankey |safe }}
+            <p>
+                Aquest diagrama Sankey destaca dues perspectives:
+            </p>
+            <ul>
+                <li>
+                    <b><span style="color: red;">Llars amb nucli familiar (parella/fills):</span></b> Tenen una distribució d’ingressos més variada, amb una proporció significativa en intervals mitjans i alts (<b><span style="color: red;">2.501-4.500 €</span></b> i més).
+                </li>
+                <li>
+                    <b><span style="color: red;">Llars unipersonals o sense nucli familiar:</span></b> Majoritàriament es concentren en intervals d’ingressos més baixos (<b><span style="color: red;">menys de 1.500 €</span></b>).
+                </li>
+            </ul>
+            <p>
+                Les dades mostren que els ingressos més baixos poden limitar l’accés a activitats culturals amb costos associats, com el teatre o concerts, mentre que les llars amb ingressos més alts tenen més oportunitats per participar-hi.
+            </p>
+
+            <h3>Anàlisi dels ingressos</h3>
+            <p>
+                D'entre els participants, els ingressos es distribueixen segons els intervals següents:
+            </p>
+            <ul>
+                <li>
+                    <b><span style="color: red;">Menys de 1.000 €:</span></b> Una proporció important de llars unipersonals i sense ingressos es concentra en aquest interval, reflectint possibles dificultats econòmiques.
+                </li>
+                <li>
+                    <b><span style="color: red;">1.001-2.500 €:</span></b> Aquest interval agrupa una part significativa de les llars, especialment aquelles amb dos membres o més.
+                </li>
+                <li>
+                    <b><span style="color: red;">Més de 3.500 €:</span></b> Llars amb nucli familiar i major estabilitat econòmica solen situar-se en aquest interval.
+                </li>
+            </ul>
+            <p>
+                Aquestes diferències ressalten la necessitat d’oferir opcions culturals accessibles per a tots els grups d’ingressos, promovent la inclusió cultural.
+            </p>
+        </section>
+        <section id="creacio-index-cultura" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Creació de l'Índex de Cultura</h2>
+            <p>L'Índex de Cultura ha estat creat amb l'objectiu de mesurar la implicació cultural dels participants en funció de la seva participació en activitats clau. Aquest indicador resumeix la participació cultural de manera senzilla i significativa, basant-se en les dades recollides a l'<b>Enquesta de Participació Cultural de Catalunya 2023</b>.</p>
+        
+            <h3>Criteris per a l'Índex</h3>
+            <p>Per calcular l’Índex de Cultura, s’ha considerat que un participant es classifica com <b><span style="color: red;">culturalment actiu</span></b> si ha respost afirmativament (sí) a tres o més de les activitats culturals següents:</p>
+            <ul>
+                <li><b>Escoltar la ràdio (R1):</b> Participació en qualsevol format, incloent ràdio convencional, escolta per Internet o podcasts.</li>
+                <li><b>Llegir diaris (D1):</b> Consum de diaris en paper o formats digitals.</li>
+                <li><b>Assistir al cinema (CN1):</b> Participació en cinema durant els darrers tres mesos.</li>
+                <li><b>Espectacles escènics (ES1):</b> Assistència a teatre, concerts, dansa o altres espectacles en els darrers 12 mesos.</li>
+                <li><b>Visitar exposicions (EX1):</b> Visites a museus, monuments, galeries d'art o exposicions en els darrers 12 mesos.</li>
+            </ul>
+        
+            <h3>Codi per a la Creació de l’Índex</h3>
+            <p>La lògica utilitzada per crear l'índex al codi és la següent:</p>
+            <pre style="background-color: #eeeeee; padding: 10px; border-radius: 5px; overflow-x: auto;">
+        dataset['IndexCultural'] = (
+            (dataset[['R1', 'D1', 'CN1', 'ES1', 'EX1']] == 1).sum(axis=1) >= 3
+        ).astype(int)
+            </pre>
+            <p>Aquesta implementació assegura que els participants que han participat en almenys tres de les activitats mencionades es classifiquen com <b><span style="color: red;">culturalment actius</span></b>. Els valors de l’índex són:</p>
+            <ul>
+                <li><b>1:</b> Culturalment actiu (ha participat en 3 o més activitats).</li>
+                <li><b>0:</b> Culturalment inactiu (ha participat en menys de 3 activitats).</li>
+            </ul>
+        
+            <h3>Objectius de l’Índex de Cultura</h3>
+            <p>L'Índex de Cultura permet identificar patrons clau i variacions en la participació cultural segons diverses variables, com ara:</p>
+            <ul>
+                <li><b>Edat:</b> Analitzar com les preferències culturals canvien al llarg de la vida.</li>
+                <li><b>Gènere:</b> Explorar diferències en la participació cultural entre homes i dones.</li>
+                <li><b>Regió:</b> Entendre com la ubicació geogràfica afecta l’accés a activitats culturals.</li>
+                <li><b>Ingressos:</b> Examinar la relació entre els ingressos familiars i l’accés a la cultura.</li>
+            </ul>
+        
+            <h3>Beneficis de l’Índex</h3>
+            <p>Aquest índex és una eina poderosa per simplificar la complexitat de les dades culturals i proporciona una visió global de com es distribueix la participació cultural a Catalunya. És especialment útil per:</p>
+            <ul>
+                <li>Detectar grups amb menys accés a la cultura.</li>
+                <li>Identificar oportunitats per millorar les polítiques culturals.</li>
+                <li>Promoure la inclusió cultural mitjançant programes específics.</li>
+            </ul>
+        </section>
+        <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+            <h2>Índex de Cultura</h2>
+            <p>
+                L'Índex de Cultura mesura la implicació cultural dels participants basant-se en la seva participació en activitats clau. Aquest índex ens permet analitzar com es distribueix la participació cultural segons factors com el sexe, l'edat, la regió i els ingressos.
+            </p>
+            
+            <h3>Índex de Cultura General</h3>
+            <p>
+                El gràfic següent mostra la distribució general de l’Índex de Cultura, destacant la proporció de participants que han respost afirmativament a tres o més activitats culturals:
+            </p>
+            {{ plot_cultural_index_cultura |safe }}
+            <p>
+                Una part significativa dels participants es classifiquen com a <b><span style="color: red;">culturalment actius</span></b>, sobretot en el cas del participentsque tenen en <b><span style="color: red;">35-54</span></b> anys. Seguits dels <b><span style="color: red;">25-24</span></b> i en darrer lloc pels joves de <b><span style="color: red;">14-19</span></b> anys.
+            </p>
+            
+            <h3>Índex de Cultura: Sexe vs Àmbit Territorial</h3>
+            <p>
+                La relació entre el sexe, l’àmbit territorial i l’índex de cultura es presenta al gràfic següent:
+            </p>
+            {{ plot_cultural_index_cultura_sexe_ambit |safe }}
+            <p>
+                Els resultats mostren que les dones tenen una participació cultural lleugerament superior als homes. Sobretot cal notar que el percentatge de culturalitat més alt de les dones es situa a l'Alt Pirineu i Aran, seguit del Metropolità, el Penedès, les comarques Gironines i el darrer a Ponent. En el cas dels homes, tenen un Índex de culturalitat més elevat a les Terres de Ponent, seguit del Camp de Tarragona, i finalment a les Terres de l'Ebre.
+            </p>
+            
+            <h3>Índex de Cultura segons Ingressos</h3>
+            <p>
+                La relació entre ingressos i índex de cultura es mostra en el següent gràfic:
+            </p>
+            {{ plot_cultural_index_cultura_ingressos |safe }}
+            <p>
+                Els ingressos familiars tenen un impacte significatiu en la participació cultural. Les llars amb ingressos alts tenen una taxa més elevada de participació en activitats culturals, mentre que les llars amb ingressos baixos mostren barreres econòmiques que dificulten aquesta participació.
+            </p>
+            
+            <h3>Índex de Cultura General</h3>
+            <p>
+                El següent gràfic de tipus sunburst il·lustra la distribució general de l’Índex de Cultura, tenint en compte múltiples variables (si es premem els diferents polígons de dins del gràfic es pot explorar amb més detall):
+            </p>
+            {{ plot_cultural_index_cultura_sexe_ambit_edat_sunburst |safe }}
+            <p>
+                Aquesta representació visual permet explorar de manera interactiva com factors com el sexe, l’edat i la regió influeixen en la participació cultural.
+            </p>         
+        </section>
+        <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+            <h3>Conclusions Generals</h3>
+            <section id="scroll-reveal" style="background-color: #f9f9f9; padding: 20px;">
+                <h3>Conclusions Generals</h3>
+                <p>
+                    Els resultats d’aquest informe mostren que la participació cultural està profundament influenciada per diversos factors socials, econòmics i demogràfics:
+                </p>
+                <ul>
+                    <li>
+                        Els joves prefereixen activitats culturals digitals i esdeveniments socials, mentre que les generacions més grans mostren una major inclinació cap a activitats tradicionals com espectacles escènics, exposicions, diaris i la ràdio.
+                    </li>
+                    <li>
+                        Les dones presenten una implicació cultural lleugerament superior als homes en la majoria de regions, amb una participació destacada a l’Alt Pirineu i Aran i altres entorns urbans.
+                    </li>
+                    <li>
+                        Els ingressos familiars són un factor clau: les llars amb ingressos més elevats participen significativament més en activitats culturals. En canvi, les llars amb ingressos baixos pateixen barreres econòmiques que limiten el seu accés a la cultura.
+                    </li>
+                    <li>
+                        Les diferències regionals són notables: les àrees metropolitanes i urbanes mostren índexs de participació més elevats que les zones rurals, com les Terres de l’Ebre o l’Alt Pirineu i Aran.
+                    </li>
+                    <li>
+                        Els patrons culturals varien segons l'edat, destacant-se que els grups de 35-54 anys i 25-34 anys són els més actius culturalment, mentre que els joves de 14-19 anys tenen menys participació.
+                    </li>
+                </ul>
+                <p>
+                    Aquest estudi posa de manifest que la cultura no només reflecteix les desigualtats socials existents, sinó que també és una eina poderosa per fomentar la cohesió social i promoure la igualtat d’oportunitats. És essencial dissenyar polítiques culturals que redueixin les barreres econòmiques, incentivin la participació dels joves i garanteixin un accés equitatiu a totes les regions.
+                </p>
+                <h3>Propostes Clau</h3>
+                <p>
+                    Per abordar els reptes detectats, seria essencial considerar les accions següents:
+                </p>
+                <ul>
+                    <li>
+                        Dissenyar programes culturals que considerin la diversitat generacional, amb activitats que combinin formats digitals i tradicionals per arribar a un públic ampli.
+                    </li>
+                    <li>
+                        Ampliar l’accessibilitat econòmica amb programes subvencionats o gratuïts per a famílies amb baixos ingressos, garantint una participació més inclusiva.
+                    </li>
+                    <li>
+                        Potenciar la descentralització de l’oferta cultural, reforçant infraestructures i iniciatives en zones menys urbanitzades, sobretot per a la regió de Ponent.
+                    </li>
+                </ul>
+            <h3>Una Pregunta per a la Reflexió</h3>
+            <p>
+                Com podrien les institucions culturals dissenyar programes més inclusius que eliminin les barreres econòmiques i garanteixin que totes les persones, independentment del seu sexe, edat o ingressos, puguin participar plenament en la cultura?
+            </p>
+        </section>        
+    </main>
+    <footer>
+        <p>&copy; 2025 Marta Granero I Martí. Tots els drets reservats.</p>
+    </footer>
+</body>
+</html>

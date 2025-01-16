@@ -1,0 +1,8 @@
+#!/Users/mac/Desktop/Enquesta_de_participaci__cultural_2023__EPCC_2023_/project/venv/bin/python
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pip._internal.cli.main import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
